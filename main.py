@@ -6,6 +6,6 @@ app = FastAPI()
 def read_root():
     return {"Hello": "World"}
 
-@app.get("/greet")
-def greet():
-    return {"message": "Hello, Welcome to FastAPI"}
+@app.get("/greet/{name}")
+def greet(name: str):
+    return {"message": f"Hello,{name} Welcome to FastAPI"}
